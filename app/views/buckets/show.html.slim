@@ -1,5 +1,8 @@
 -  title "MessageBucket :: View Bucket"
 -  heading @bucket.title
+p.lead
+  | Send a POST request to the webhook URL.<br>The body must be sent as json, with the keys: <kbd>message</kbd>, <kbd>priority</kbd>.
+  | <br>Valid priorities: <kbd>standard</kbd>, <kbd>urgent</kbd>, <kbd>warning</kbd>
 p
   strong Webhook URL:
   br
