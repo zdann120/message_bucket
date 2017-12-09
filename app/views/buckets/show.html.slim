@@ -1,8 +1,23 @@
-h2 = @bucket.title
+-  title "MessageBucket :: View Bucket"
+-  heading @bucket.title
 p
   strong Webhook URL:
   br
   pre = webhooks_url(@bucket.access_code)
+hr
+h4 Received Messages
+table.table.table-condensed.table-bordered.table-hover.table-striped
+  thead
+    tr
+      th Received at
+      th Priority
+      th Message
+  tbody
+    - @bucket.messages.each do |message|
+      tr
+        td = message.created_at
+        td = message.priority
+        td = message.message
 
 => link_to 'Edit', edit_bucket_path(@bucket)
 '|

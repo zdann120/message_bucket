@@ -1,11 +1,12 @@
 class BucketsController < ApplicationController
-  before_action :set_bucket, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :set_bucket, only: [:show, :edit, :update, :destroy]
 
   # GET /buckets
   # GET /buckets.json
   def index
     @buckets = current_user.buckets.all
+    authorize @buckets
   end
 
   # GET /buckets/1
@@ -16,6 +17,7 @@ class BucketsController < ApplicationController
   # GET /buckets/new
   def new
     @bucket = Bucket.new
+    authorize @bucket
   end
 
   # GET /buckets/1/edit
@@ -26,6 +28,7 @@ class BucketsController < ApplicationController
   # POST /buckets.json
   def create
     @bucket = current_user.buckets.new(bucket_params)
+    authorize @bucket
 
     respond_to do |format|
       if @bucket.save
@@ -66,6 +69,7 @@ class BucketsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_bucket
       @bucket = Bucket.find_by_token(params[:id])
+      authorize @bucket
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

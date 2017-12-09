@@ -117,6 +117,8 @@ GEM
       pry (>= 0.10.4)
     public_suffix (3.0.1)
     puma (3.11.0)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.3)
     rack-mini-profiler (0.10.5)
       rack (>= 1.2.0)
@@ -257,6 +259,7 @@ DEPENDENCIES
   pg (~> 0.21)
   pry-rails
   puma (~> 3.10)
+  pundit
   rack-mini-profiler (~> 0.10)
   rack-timeout (~> 0.4)
   rails (~> 5.1.3)
