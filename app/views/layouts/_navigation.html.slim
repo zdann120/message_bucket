@@ -1,0 +1,16 @@
+nav.navbar.navbar-default
+  .container
+    .navbar-header
+      button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+        span.sr-only
+          | Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to 'MessageBucket', root_path, class: 'navbar-brand'
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          = active_link_to 'Home', root_path
+        li
+          = active_link_to 'Buckets', buckets_path

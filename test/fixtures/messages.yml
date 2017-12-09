@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bucket: one
+  priority: 1
+  message: MyText
+  token: 
+
+two:
+  bucket: two
+  priority: 1
+  message: MyText
+  token: 

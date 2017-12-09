@@ -1,0 +1,9 @@
+h2 = @bucket.title
+p
+  strong Webhook URL:
+  br
+  pre = webhooks_url(@bucket.access_code)
+
+=> link_to 'Edit', edit_bucket_path(@bucket)
+'|
+=< link_to 'Back', buckets_path

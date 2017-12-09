@@ -1,0 +1,25 @@
+h1 Listing buckets
+
+table.table
+  thead
+    tr
+      th User
+      th Token
+      th Access code
+      th
+      th
+      th
+
+  tbody
+    - @buckets.each do |bucket|
+      tr
+        td = bucket.user
+        td = bucket.token
+        td = bucket.access_code
+        td = link_to 'Show', bucket
+        td = link_to 'Edit', edit_bucket_path(bucket)
+        td = link_to 'Destroy', bucket, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Bucket', new_bucket_path
